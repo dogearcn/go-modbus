@@ -7,10 +7,11 @@ package modbusclient
 
 import (
 	"fmt"
-	"github.com/tarm/goserial"
 	"io"
 	"log"
 	"time"
+
+	"github.com/tarm/serial"
 )
 
 // crc computes and returns a cyclic redundancy check of the given byte array

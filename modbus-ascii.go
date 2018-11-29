@@ -9,10 +9,11 @@ import (
 	"bytes"
 	"encoding/hex"
 	"fmt"
-	"github.com/tarm/goserial"
 	"io"
 	"log"
 	"time"
+
+	"github.com/tarm/serial"
 )
 
 func Lrc(data []byte) uint8 {
