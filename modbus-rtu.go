@@ -72,6 +72,13 @@ func ConnectRTU(serialDevice string, baudRate int) (io.ReadWriteCloser, error) {
 	return ctx, err
 }
 
+// ConnectRTUWithConfig attempts to access the Serial Device for subsequent
+// RTU writes and response reads from the modbus slave device
+func ConnectRTUWithConfig(conf *serial.Config) (io.ReadWriteCloser, error) {
+	ctx, err := serial.OpenPort(conf)
+	return ctx, err
+}
+
 // DisconnectRTU closes the underlying Serial Device connection
 func DisconnectRTU(ctx io.ReadWriteCloser) {
 	ctx.Close()
