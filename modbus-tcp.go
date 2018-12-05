@@ -58,8 +58,8 @@ func ConnectTCP(server string, port int) (net.Conn, error) {
 	return conn, nil
 }
 
-func DisconnectTCP(conn net.Conn) {
-	conn.Close()
+func DisconnectTCP(conn net.Conn) error {
+	return conn.Close()
 }
 
 // TransmitAndReceive is a method corresponding to a TCPFrame object which

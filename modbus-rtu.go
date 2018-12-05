@@ -80,8 +80,8 @@ func ConnectRTUWithConfig(conf *serial.Config) (io.ReadWriteCloser, error) {
 }
 
 // DisconnectRTU closes the underlying Serial Device connection
-func DisconnectRTU(ctx io.ReadWriteCloser) {
-	ctx.Close()
+func DisconnectRTU(ctx io.ReadWriteCloser) error {
+	return ctx.Close()
 }
 
 // viaRTU is a private method which applies the given function validator,

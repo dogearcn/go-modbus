@@ -89,8 +89,8 @@ func ConnectASCII(serialDevice string, baudRate int) (io.ReadWriteCloser, error)
 }
 
 // DisconnectASCII closes the underlying Serial Device connection
-func DisconnectASCII(ctx io.ReadWriteCloser) {
-	ctx.Close()
+func DisconnectASCII(ctx io.ReadWriteCloser) error {
+	return ctx.Close()
 }
 
 // viaASCII is a private method which applies the given function validator,
